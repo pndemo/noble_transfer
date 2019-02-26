@@ -63,8 +63,9 @@ class DocsController < ApplicationController
 
   def get 
     doc = current_user.docs.find_by_id(params[:id]) 
-    if doc 
-      send_file doc.uploaded_file.path, :type => doc.uploaded_file_content_type, :disposition => 'attachment'
+    if doc
+      data = open(URI.parse(URI.encode(doc.uploaded_file.url)))
+      send_data data, :filename => doc.uploaded_file_file_name
     else
       flash[:error] = "You don't have permission to access this file!"
       redirect_to docs_path
