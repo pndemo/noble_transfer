@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190226011136) do
+ActiveRecord::Schema.define(version: 20190226123021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "docs", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "uploaded_file_file_name"
+    t.string "uploaded_file_content_type"
+    t.integer "uploaded_file_file_size"
+    t.datetime "uploaded_file_updated_at"
+    t.index ["user_id"], name: "index_docs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
