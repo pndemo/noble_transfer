@@ -1,4 +1,4 @@
-# noble_transfer
+# Noble Transfer
 A simple web based file transfer application. It's simple and fun to use!!!
 
 ## Install
