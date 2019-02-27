@@ -1,0 +1,9 @@
+development:
+  provider: Google
+  google_storage_access_key_id: <%= ENV['ACCESS_KEY'] %>
+  google_storage_secret_access_key: <%= ENV['ACCESS_SECRET'] %>
+
+production:
+  provider: Google
+  google_storage_access_key_id: <%= ENV['ACCESS_KEY'] %>
+  google_storage_secret_access_key: <%= ENV['ACCESS_SECRET'] %>

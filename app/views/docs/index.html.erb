@@ -1,0 +1,15 @@
+<% title "Docs" %> 
+<table> 
+  <tr> 
+    <th>Uploaded Files</th> 
+  </tr> 
+  <% for doc in @docs %> 
+    <tr>
+      <td><%= link_to doc.file_name, download_url(doc), target: :_blank %></td>
+      <td><%= link_to "Show", doc %></td> 
+      <td><%= link_to "Edit", edit_doc_path(doc) %></td> 
+      <td><%= link_to "Destroy", doc, :confirm => 'Are you sure?', :method => :delete %></td> 
+    </tr> 
+  <% end %> 
+</table> 
+<p><%= link_to "New Doc", new_doc_path %></p>
